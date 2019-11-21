@@ -7,13 +7,24 @@
 <a href="http://127.0.0.1:5000/">Home page</a>
 
 
+{%for prodact in Prodacts%}
 <div class="card">
-<img src="https://lp2.hm.com/hmgoepprod?set=source[/02/63/02637a88dab96d92dc76a2f9776de33fc3c7041e.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],hmver[1]&call=url[file:/product/mobilefullscreen]" alt="Denim Jeans" style="width:10%">
-<h2>BLACK HODDIE</h2>
-<p class="price">$19.99</p>
-<p>FRIENDS HOODIE</p>
-<p><button>Add to Cart</button></p>
+<img src="{{prodact.picturelink}}" style="width:10%">
+<h2>{{prodact.name}}}</h2>
+<p class="price">{{prodact.price}}}</p>
+<p>{{prodact.description}}</p>
+<a href= "/add_cart/1"> </a>
 </div> 
+{%%endfor}
+
+
+
+
+<p><a href="{{ url_for('/') }}"></a></p>
+<p><a href="{{ url_for('store') }}"></a></p>
+
+
+
 
 </body>
 </html>
