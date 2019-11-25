@@ -4,24 +4,28 @@
 	<title>STORE</title>
 </head>
 <body>
-<a href="http://127.0.0.1:5000/">Home page</a>
+
+<p><a href="{{ url_for('home') }}">Home</a></p>
+<p><a href="{{ url_for('store') }}">Store</a></p>
 
 
-{%for prodact in Prodacts%}
+{%for product in products%}
 <div class="card">
-<img src="{{prodact.picturelink}}" style="width:10%">
-<h2>{{prodact.name}}}</h2>
-<p class="price">{{prodact.price}}}</p>
-<p>{{prodact.description}}</p>
+<img src="{{product.picturelink}}" style="width:10%">
+<h2>{{product.name}}</h2>
+<p class="price">{{product.price}}</p>
+<p>{{product.description}}</p>
 <a href= "/add_cart/1"> </a>
 </div> 
 {%%endfor}
+<br>
+<br>
+<button type="button">Pay Now!</button> 
 
 
 
 
-<p><a href="{{ url_for('/') }}"></a></p>
-<p><a href="{{ url_for('store') }}"></a></p>
+ 
 
 
 

@@ -1,4 +1,4 @@
-from model import Base, Product
+from model import *
 
 
 from sqlalchemy import create_engine
@@ -10,11 +10,11 @@ Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-def add_product(name, price, picturelink,  description):
+def add_product(name, price, picturelink, description):
    
     product_object = Product(
-    name=name,
-    price=price,
+    name= name,
+    price= price,
     picturelink= picturelink,
     description= description)
     session.add(product_object)
@@ -22,7 +22,7 @@ def add_product(name, price, picturelink,  description):
 
 
 
-def update_product_status(name,  price, picturelink,  description):
+def update_product_status(name, price, picturelink,  description):
   
    product_object = session.query(
        Product).filter_by(
@@ -68,7 +68,7 @@ def add_to_cart(product_id):
 	session.commit()
 
 
-
+add_product("noam", 10000, "selfie", "extra smart")
 
 
 
