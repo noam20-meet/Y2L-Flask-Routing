@@ -16,18 +16,28 @@ def store():
 	products= query_all()
 	return render_template("store.html" , products= products)
 
-@app.route('/add_product/<name>/<price>/<picturelink>/<description>')
-def add_the_product(name, price, picturelink, description):
+@app.route('/add_product/')
+def add_the_product():
+	name =request.form["name"]
+	price = request.form["price"]
+	picturelink= request.form["picturelink"]
+	description= request.form["description"]
 	add_product(name, price, picturelink, description)
 	return render_template("store.html")
 
-@app.route('/update_product/<name>/<price>/<picturelink>/<description>')
-def uptade_the_product(name, price, picturelink, description):
-	update_product(name, price, picturelink, description)
+@app.route('/update_product/')
+def uptade_the_product():
+	name =request.form["name"]
+	price = request.form["price"]
+	picturelink= request.form["picturelink"]
+	description= request.form["description"]
+	add_product(name, price, picturelink, description)
 	return render_template("store.html")
+	
 
-@app.route('/delete_product/<their_price>')
+@app.route('/delete_product/')
 def delete_the_product(their_price):
+	their_price= request.form["their_price"]
 	delete_product(their_price)
 	return render_template("store.html")
 
@@ -36,13 +46,15 @@ def quary_all_products():
 	add_to_cart()
 	return render_template("cart.html")
 
-@app.route('/quary_by_name/<their_name>')
+@app.route('/quary_by_name/')
 def quary_by_name_products():
+	their_name=request.form["their_name"]
 	quary_by_name()
 	return render_template("cart.html")
 
-@app.route('/add_to_cart/<product_id>')
+@app.route('/add_to_cart/')
 def add_cart():
+	product_id= request.form["product_id"]
 	product_id=int(product_id)
 	add_to_cart()
 	return render_template("cart.html")
