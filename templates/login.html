@@ -8,12 +8,12 @@
   <div class="container">
     <h1>Login:</h1>
     <br>
-    <form action="" method="post">
-      <input type="text" placeholder="Username" name="username" value="{{
+    <form action="/login" method="POST">
+      Username:<input type="text" placeholder="Username" name="username" value="{{
         request.form.username }}">
         <br>
         <br>
-       <input type="password" placeholder="Password" name="password" value="{{
+       Password:<input type="password" placeholder="Password" name="password" value="{{
         request.form.password }}">
         <br>
         <br>

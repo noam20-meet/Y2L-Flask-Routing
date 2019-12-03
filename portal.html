@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Portal</title>
+</head>
+<body>
+
+{%for product in products%}
+<div class="card">
+<img src="{{product.picturelink}}" style="width:10%">
+<h2>{{product.name}}</h2>
+<p class="price">{{product.price}}</p>
+<p>{{product.description}}</p>
+<a href= "/add_cart/1"><br>
+</div> 
+{%endfor%}
+
+<form action="/create" method="POST">
+    Name of Product:<input type="text" name="name" placeholder="Name">
+    <br>
+    Price of Product:<input type="text" name="price" placeholder="Price">
+    <br>
+    Picture Link of Product:<input type="text" name="picturelink" placeholder="Picture Link">
+    <br>
+    Description of Product:<input type="text" name="description" placeholder="Description">
+    <br>
+    <input type="submit" value="Submit">
+</form>
+
+
+
+
+
+
+</body>
+</html>
