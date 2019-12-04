@@ -28,7 +28,7 @@ def add_the_product():
 	description= request.form["description"]
 	add_product(name, price, picturelink, description)
 	return render_template("store.html")
-1
+
 @app.route('/update_product/')
 def uptade_the_product():
 	name =request.form["name"]
@@ -53,9 +53,14 @@ def login():
 
 	
 @app.route('/portal')
-def enter_portal():
-	return render_template ("portal.html")
-
+def portal_edit():
+	name =request.form["name"]
+	price = request.form["price"]
+	picturelink= request.form["picturelink"]
+	description= request.form["description"]
+	portal_edit(name, price, picturelink, description)
+	return render_template("store.html")
+	
 
 	
 	
