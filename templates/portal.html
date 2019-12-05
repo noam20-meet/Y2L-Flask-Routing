@@ -7,13 +7,17 @@
 
 <form action="/portal" method="POST">
 	<p>hi</p>
-    Name of Product:<input type="text" name="{{product.name}}" placeholder="Name">
+    Name of Product:<input type="text" placeholder="Name" name="name" value="{{
+        request.form.name }}">
     <br>
-    Price of Product:<input type="text" name="{{product.price}}" placeholder="Price">
+    Price of Product:<input type="text" placeholder="Price" name="price" value="{{
+        request.form.price}}">
     <br>
-    Picture Link of Product:<input type="text" name="{{product.picturelink}}" placeholder="Picture Link">
+    Picture Link of Product:<input type="text" placeholder="PictureLink" name="picturelink" value="{{
+        request.form.picturelink }}">
     <br>
-    Description of Product:<input type="text" name="{{product.description}}" placeholder="Description">
+    Description of Product:<input type="text" placeholder="Description" name="description" value="{{
+        request.form.description }}">
     <br>
     <input type="submit" value="Submit">
 </form>

@@ -20,16 +20,22 @@ def store():
 def about():
    return render_template("about.html" )
 
-@app.route('/add_product/')
+@app.route("/add_cart/1")
+def add_cart(prodact_id):
+	add_cart(prodact_id)
+	return render_template("cart.html")
+
+@app.route('/add_product')
 def add_the_product():
 	name =request.form["name"]
 	price = request.form["price"]
 	picturelink= request.form["picturelink"]
 	description= request.form["description"]
+
 	add_product(name, price, picturelink, description)
 	return render_template("store.html")
 
-@app.route('/update_product/')
+@app.route('/update_product')
 def uptade_the_product():
 	name =request.form["name"]
 	price = request.form["price"]
@@ -57,7 +63,7 @@ def portal_edit():
 	if request.method == 'GET':
 		name =request.form["name"]
 		price = request.form["price"]
-		picturelink= request.form["picturelink"]
+		cc= request.form["picturelink"]
 		description= request.form["description"]
 		portal_edit(name, price, picturelink, description)
 		uptade_the_product(name, price, picturelink, description)
