@@ -35,7 +35,7 @@ def uptade_the_product():
 	price = request.form["price"]
 	picturelink= request.form["picturelink"]
 	description= request.form["description"]
-	add_product(name, price, picturelink, description)
+	uptade_the_product(name, price, picturelink, description)
 	return render_template("store.html")
 	
 
@@ -47,19 +47,21 @@ def login():
 			error = 'Invalid Credentials. Please try again.'
 			return render_template("home.html")
 		else:
-			return render_template("portal.html")
+			return render_template("portal.html" )
 	else:
 		return render_template('login.html', error=error)
 
 	
-@app.route('/portal')
+@app.route('/portal' ,  methods=['GET', 'POST'])
 def portal_edit():
-	name =request.form["name"]
-	price = request.form["price"]
-	picturelink= request.form["picturelink"]
-	description= request.form["description"]
-	portal_edit(name, price, picturelink, description)
-	return render_template("store.html")
+	if request.method == 'GET':
+		name =request.form["name"]
+		price = request.form["price"]
+		picturelink= request.form["picturelink"]
+		description= request.form["description"]
+		portal_edit(name, price, picturelink, description)
+		uptade_the_product(name, price, picturelink, description)
+		return render_template("store.html")
 	
 
 	

@@ -6,6 +6,14 @@
 <body>
 
 {%for product in products%}
+<div class="card">
+<img src="{{product.picturelink}}" style="width:10%">
+<h2>{{product.name}}</h2>
+<p class="price">{{product.price}}</p>
+<p>{{product.description}}</p>
+<a href= "/add_cart/1"><br>
+</div> 
+{%endfor%}
 
 
 {%endfor%}

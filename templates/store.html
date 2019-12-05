@@ -8,6 +8,36 @@
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+	  <style type="text/css">
+	  	.card {
+		  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		  max-width: 300px;
+		  margin: auto;
+		  text-align: center;
+		  font-family: arial;
+		}
+
+		.price {
+		  color: grey;
+		  font-size: 22px;
+		}
+
+		.card button {
+		  border: none;
+		  outline: 0;
+		  padding: 12px;
+		  color: white;
+		  background-color: #000;
+		  text-align: center;
+		  cursor: pointer;
+		  width: 100%;
+		  font-size: 18px;
+		}
+
+		.card button:hover {
+		  opacity: 0.7;
+	</style>
 </head>
 <body>
 
@@ -37,12 +67,12 @@
 
 {%for product in products%}
 <div class="card">
-<img src="{{product.picturelink}}" style="width:10%">
-<h2>{{product.name}}</h2>
-<p class="price">{{product.price}}</p>
-<p>{{product.description}}</p>
-<a href= "/add_cart/1"><br>
-<button type="button">Pay Now!</button>  </a>
+	<img src="{{product.picturelink}}" style="width:10%">
+	<h2>{{product.name}}</h2>
+	<p class="price">{{product.price}}</p>
+	<p>{{product.description}}</p>
+	<a href= "/add_cart/1"><br>
+	<button type="button">Pay Now!</button>  </a>
 </div> 
 {%endfor%}
 <br>
